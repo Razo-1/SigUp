@@ -21,5 +21,10 @@ for(let i = 2026;i > 1980;i--){
 
 let gender = ['male','female']
 
+let defult = []
 
-export { monthsData,year,gender }
+for(let i = 31;i > 0;i--){
+    defult.push(i)
+}
+
+export { monthsData,year,gender,defult}

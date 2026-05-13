@@ -1,0 +1,27 @@
+.sigup{
+    display: flex;
+    flex-direction: column;
+    width:600px;
+}
+.sigup h1{
+    font-size:25px;
+}
+.sigup p{
+    margin:0;
+    color: #111112;
+    font-size:16px;
+    font-weight:400;
+}
+.logo{
+    display:flex;
+    align-items: center;
+    gap:5px;
+    font-size:14px;
+    font-weight:800;
+}
+.logo i{
+    color:#0064e0;
+}
+.logo h3{
+    margin:0;
+}
