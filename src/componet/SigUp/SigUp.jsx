@@ -1,7 +1,8 @@
 import { Form } from "../Form/Form"
 import './SigUp.module.css'
 
-function SigUp(){
+function SigUp({ monthsData,year,gender }){
+    
     return(
         <div>
             <div>
@@ -11,7 +12,7 @@ function SigUp(){
             <h1>Get started on Facebook</h1>
             <p>Create an account to connect with friends, family and communities of people<br/>
              who share your interests.</p>
-             <Form/>
+             <Form monthsData={monthsData} year={year} gender={gender}/>
         </div>
     )
 }

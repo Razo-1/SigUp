@@ -1,10 +1,10 @@
 import { SigUp } from './componet/SigUp/SigUp'
 import './App.module.css'
 
-function App(){
+function App({ monthsData,year,gender } ){
   return(
     <>
-      <SigUp />
+      <SigUp monthsData={monthsData} year={year} gender={gender} />
     </>
   )
 }
