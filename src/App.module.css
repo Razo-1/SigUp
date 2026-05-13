@@ -1,0 +1,12 @@
+@font-face {
+    font-family:robot;
+    src: url('./assets/Font/Roboto-VariableFont_wdth\,wght.ttf');
+}
+*{
+    font-family:robot;
+    font-weight:500;
+}
+
+body{
+    background-color:#ffffff;
+}
