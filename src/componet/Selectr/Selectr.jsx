@@ -1,7 +1,7 @@
 import { useState } from "react";
 import style from './Selectr.module.css'
 
-function Selectr({ monthsData,year,gender,defult,onSelect}) {
+function Selectr({ monthsData,year,gender,defult,onSelect,hasError}) {
     
     let [myDay,setMyDay] = useState(defult)
     let [allData,setAllData] = useState({
@@ -45,17 +45,20 @@ function Selectr({ monthsData,year,gender,defult,onSelect}) {
 
     return (
         <div className={style.container}>
-            <select name="month" onChange={days}>
+            <select className={`${style.defulte} ${hasError ? style.error : ""}`} name="month" onChange={days}>
+                <option value="" selected disabled hidden>Month</option>
                 {monthsData.map((el, ind) => (
                     <option key={ind}>{el.month}</option>
                 ))}
             </select>
-            <select name="day" onChange={days}>
+            <select className={`${style.defulte} ${hasError ? style.error : ""}`}  name="day" onChange={days}>
+                <option value="" selected disabled hidden>Day</option>
                 {myDay.map((el, ind) => (
                     <option key={ind}>{el}</option>
                 ))}
             </select>
-            <select name="year" onChange={days}>
+            <select className={`${style.defulte} ${hasError ? style.error : ""}`}  name="year" onChange={days}>
+                <option value="" selected disabled hidden>Year</option>
                 {year.map((el, ind) => (
                     <option key={ind}>{el}</option>
                 ))}

@@ -5,8 +5,8 @@ import style from './Form.module.css';
 
 function Form({ monthsData,year,gender,defult}){
 
-    let [birthdayValid, setBirthdayValid] = useState(true)
-    let [gend,setGend] = useState(true)
+    let [birthdayValid, setBirthdayValid] = useState(null)
+    let [gend,setGend] = useState(null)
 
     let [error,setError] = useState({
         name : true,
@@ -51,7 +51,8 @@ function Form({ monthsData,year,gender,defult}){
             }
         }
         setFormat(val)
-        
+        if(birthdayValid !== true) setBirthdayValid(false)
+        if(gend !== true) setGend(false)
     }
 
     
@@ -70,8 +71,8 @@ function Form({ monthsData,year,gender,defult}){
                     <h3>Birthday</h3>
                     <span>?</span>
                 </div>
-                <div className={`${birthdayValid === false ? style.inputerorr : ''} ${style.data}`}>
-                    <Selectr  monthsData={monthsData} year={year} defult={defult} onSelect={dataCheck}/>
+                <div className={`${style.data}`}>
+                    <Selectr  monthsData={monthsData} year={year} defult={defult} onSelect={dataCheck} hasError={birthdayValid === false}/>
                 </div>
             </div>
             <div>
@@ -79,8 +80,8 @@ function Form({ monthsData,year,gender,defult}){
                     <h3>Gender</h3>
                     <span>?</span>
                 </div>
-                <div className={`${gend === false ? style.error : ''} ${style.entGend}`}>
-                    <Gender gender={gender} genderCheck={genderCheck}/>
+                <div className={` ${style.entGend}`}>
+                    <Gender gender={gender} genderCheck={genderCheck} hasError={gend === false}/>
                 </div>
             </div>
             <div className={style.email}>
